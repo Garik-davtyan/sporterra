@@ -1,0 +1,467 @@
+/* UNDER ARMOUR — стили как у .main-title */
+.underarmour-title {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 auto;
+    color: black;
+    font-size: 9vw;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .underarmour-title {
+        font-size: 7vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 2vw;
+        margin: 0;
+    }
+}
+@media (max-width: 480px) {
+    .underarmour-title {
+        font-size: 8vw;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        padding: 0 2vw;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+/* Для свайпового видеоплеера */
+.swipe-video-wrap {
+  width: 100vw;
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  background: #000;
+  height: 270px;
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.swipe-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: all;
+}
+@media (min-width: 769px) {
+  .swipe-video-wrap {
+    max-width: 1200px;
+    height: 700px;
+  }
+  .swipe-video {
+    height: 700px;
+  }
+}
+/* --- Video Fade Animation for Smooth Switch --- */
+.video-fade {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(.77,0,.18,1);
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.video-show {
+  opacity: 1 !important;
+  pointer-events: auto;
+  z-index: 2;
+}
+.video-hide {
+  opacity: 0 !important;
+  pointer-events: none;
+  z-index: 1;
+}
+.video-player-wrap {
+  position: relative;
+  min-height: 220px;
+}
+/* --- Video Player Custom Controls --- */
+.video-player-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto 10px auto;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+.video-controls {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 8px 16px 8px 8px;
+  z-index: 10;
+  border-top-left-radius: 12px;
+}
+.video-progress {
+  width: 92%;
+  margin-bottom: 8px;
+  accent-color: #c4fa08;
+  height: 4px;
+}
+.video-btn-row {
+  display: flex;
+  gap: 10px;
+}
+.video-btn {
+  padding: 6px 16px;
+  font-size: 16px;
+  border: none;
+  background: #c4fa08;
+  color: #222;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+.video-btn:hover {
+  background: #222;
+  color: #c4fa08;
+}
+@media (max-width: 768px) {
+  .video-player-wrap {
+    max-width: 100vw;
+  }
+  .video-btn {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 480px) {
+  .video-player-wrap {
+    max-width: 100vw;
+    min-height: 120px;
+    margin: 48px auto 6px auto;
+  }
+  .video-controls {
+    padding: 4px 0 2px 0;
+  }
+  .video-btn-row {
+    gap: 6px;
+  }
+  .video-btn {
+    font-size: 13px;
+    padding: 4px 10px;
+    min-width: 54px;
+    min-height: 32px;
+    box-shadow: none;
+  }
+  .video-progress {
+    width: 99vw;
+    min-width: 80vw;
+    max-width: 99vw;
+    height: 3px;
+    margin-bottom: 4px;
+    accent-color: #c4fa08;
+  }
+}
+
+@media (max-width: 768px) {
+    .main-bottom-row.squatwolf-row {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 5vw;
+    }
+}
+@media (max-width: 480px) {
+    .main-bottom-row.squatwolf-row {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 3vw;
+    }
+}
+.squatwolf-image {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    /* border удалён */
+    margin: 0 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s;
+}
+.squatwolf-image:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 768px) {
+    .squatwolf-image {
+        width: 320px;
+        height: 320px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .squatwolf-image {
+        width: 80vw;
+        height: 80vw;
+        min-width: 120px;
+        min-height: 120px;
+        margin: 0 2vw;
+    }
+}
+.lecoq-title {
+    width: 100%;
+    text-align: center;
+    font-size: 8vw;
+    font-weight: bold;
+    color: black;
+    margin: 30px 0 10px 0;
+    letter-spacing: 0.18em;
+    /* text-shadow удалён */
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .lecoq-title {
+        font-size: 12vw;
+        margin: 20px 0 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .lecoq-title {
+        font-size: 16vw;
+        margin: 16px 0 6px 0;
+    }
+}
+/* Нижний ряд с фото lecoq */
+.main-bottom-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    margin-top: 30px;
+}
+
+.lecoq-image {
+    width: 520px;
+    height: 520px;
+    object-fit: cover;
+    /* border удалён */
+    margin-left: 0;
+    margin-right: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.2s;
+}
+.lecoq-image:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+@media (max-width: 768px) {
+    .main-bottom-row {
+        gap: 10px;
+    }
+    .lecoq-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-bottom-row {
+        gap: 8vw;
+    }
+    .lecoq-image {
+        width: 40vw;
+        height: 40vw;
+        min-width: 90px;
+        min-height: 90px;
+    }
+}
+/* Основное изображение */
+
+/* main-image теперь управляется только .swipe-video и .swipe-video-wrap */
+/* .main-image класс используется для видео, но размеры и стили задаются .swipe-video и .swipe-video-wrap */
+
+/* Надпись VENUM по центру фото */
+.main-title {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0 auto;
+    margin: 0;
+    color: black;
+    font-size: 9vw;
+    font-weight: bold;
+    /* text-shadow удалён */
+    letter-spacing: 0.2em;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 2;
+}
+
+/* Галерея с тремя фото */
+.main-gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    margin-top: 20px;
+    
+    width: 100%;
+}
+
+.squatwolf-title {
+    width: 100%;
+    text-align: center;
+    font-size: 7vw;
+    font-weight: bold;
+    color: #222;
+    margin: 24px 0 8px 0;
+    letter-spacing: 0.15em;
+    pointer-events: none;
+    user-select: none;
+    max-width: 98vw;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+@media (max-width: 768px) {
+    .squatwolf-title {
+        font-size: 10vw;
+        margin: 16px 0 6px 0;
+    }
+}
+@media (max-width: 480px) {
+    .squatwolf-title {
+        font-size: 11vw;
+        margin: 10px 0 4px 0;
+        letter-spacing: 0.10em;
+        max-width: 96vw;
+    }
+}
+
+.gallery-image {
+    width: 750px;
+    height: 900px;
+    object-fit: cover;
+    margin-right: 10px;
+    /* border удалён */
+}
+.gallery-image:last-child {
+    margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 7vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 2vw;
+        margin: 0;
+    }
+    .gallery-image {
+        width: 140px;
+        height: 140px;
+        max-width: 140px;
+    }
+    .main-gallery {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 8vw;
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        padding: 0 2vw;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .gallery-image {
+        width: 100vw;
+        height: 400px;
+        max-width: 100vw;
+        margin: 0 auto;
+    }
+    .main-gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .gallery-image:last-child {
+        margin: 0 auto !important;
+        display: block;
+    }
+}
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    height: auto;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
+}
+
+.main1 {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: white;
+    overflow-x: hidden;
+}
+
+.main-gallery {
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+

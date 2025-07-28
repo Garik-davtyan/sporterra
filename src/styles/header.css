@@ -1,0 +1,420 @@
+/* --- Мобильное меню и бургер --- */
+.burger-menu {
+  display: none;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  max-width: 350px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  overflow-y: auto;
+  padding-top: 60px;
+}
+.mobile-menu.open {
+  display: block;
+  transform: translateX(0);
+}
+@media (max-width: 900px) {
+  .menu-bar {
+    display: none !important;
+  }
+  .burger-menu {
+    display: flex !important;
+  }
+  
+}
+@media (min-width: 901px) {
+  .mobile-menu {
+    display: none !important;
+  }
+  .burger-menu {
+    display: none !important;
+  }
+}
+/* Стили для мобильного выпадающего меню */
+.mobile-dropdown-btn {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 14px 20px;
+  font-size: 1.1em;
+  color: #222;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+}
+.mobile-dropdown-btn[aria-expanded="true"] {
+  background: #f0f0f0;
+}
+.mobile-dropdown-content {
+  background: #111 !important;
+  color: #fff;
+  padding: 0 0 10px 10px;
+  box-shadow: none;
+  border-left: 2px solid #eee;
+  margin-bottom: 10px;
+}
+.mobile-dropdown-content .menu-btn {
+  color: #fff !important;
+  border-bottom: 1px solid #fff;
+}
+.mobile-dropdown-content .menu-btn:last-child {
+  border-bottom: none;
+}
+.mobile-dropdown-content .menu-btn:hover {
+  background: #222 !important;
+  color: #c4fa08 !important;
+}
+/* --- Бургер-меню для мобильных --- */
+.burger-menu {
+  display: none;
+  width: 38px;
+  height: 38px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+.burger-lines {
+  width: 28px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.burger-line {
+  height: 4px;
+  border-radius: 2px;
+  background: #222;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+/* Мобильное меню (выезжает по диагонали) */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -8px 0 32px rgba(0,0,0,0.18);
+  z-index: 999;
+  transform: translate(100%, -100%) scale(0.8);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1), opacity 0.25s;
+  border-radius: 0 0 0 32px;
+  padding: 32px 18px 18px 18px;
+}
+.mobile-menu.open {
+  display: block;
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+}
+.mobile-menu .menu-btn {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  font-size: 18px;
+  padding: 12px 0;
+  border-radius: 12px;
+  background: none;
+  color: #222;
+  text-align: left;
+}
+.mobile-menu .menu-btn:hover {
+  background: #000;
+  color: #c4fa08;
+}
+* {
+  font-family: "martel", Arial, sans-serif;
+}
+/* Контейнер для поиска — адаптивный */
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 160px;
+  width: 100%;
+}
+/* Выпадающее меню для 'Женское' */
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 10;
+    border-radius: 0 0 10px 10px;
+    padding: 8px 0;
+}
+.menu-dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+.dropdown-content .menu-btn {
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    background: none;
+    color: #000;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-sizing: border-box;
+}
+.dropdown-content .menu-btn:hover {
+    background: #000;
+    color: #c4fa08;
+}
+.header1 {
+    height: 80px;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 20px;
+    background: #c4fa08;
+    
+}
+
+.logo1 {
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.menu-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.menu-btn {
+    background: none;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-decoration: none !important;
+}
+.menu-btn:hover {
+    background: #000;
+    color: #c4fa08;
+    border-radius: 20px;
+    text-decoration: none !important;
+}
+
+  .dropdown-content .menu-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 7px;
+    text-decoration: none !important;
+    border-bottom: 1px solid #fff;
+  }
+
+.dropdown-content .menu-btn:last-child {
+    border-bottom: none;
+}
+  .logo1 {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  .menu-bar {
+    gap: 10px;
+  }
+.small-dropdown {
+    min-width: 70px !important;
+    max-width: 110px !important;
+    min-height: 0 !important;
+    padding: 4px 0 !important;
+    border-radius: 0 0 8px 8px !important;
+}
+.d-none {
+    display: none !important;
+}
+/* Крупные кнопки меню только на десктопе */
+.menu-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+}
+  .search-input {
+    padding: 5px 28px 5px 8px;
+    min-width: 60px;
+    max-width: 100px;
+    width: 100%;
+    font-size: 12px;
+    border-radius: 12px;
+  }
+  .search-icon {
+    font-size: 14px !important;
+  }
+
+
+@media (max-width: 480px) {
+  .menu-bar {
+    display: none !important;
+  }
+  .header1 {
+    height: 48px;
+    background: #c4fa08;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1202;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .logo1 {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+  }
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    position: static;
+  }
+  .burger-menu {
+    display: flex !important;
+    margin-left: 8px;
+    position: static;
+    right: 0;
+    top: auto;
+    transform: none;
+    z-index: 1201;
+  }
+  .mobile-menu {
+    display: block;
+  }
+  .mobile-menu .menu-btn {
+    display: block;
+  }
+  .dropdown-content {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    min-width: 100px;
+    min-height: 120px;
+    padding: 10px 0 10px 0;
+    border-radius: 0 0 5px 5px;
+  }
+  .dropdown-content .menu-btn {
+    font-size: 10px !important;
+    padding: 2px 8px !important;
+    border-radius: 5px !important;
+    width: 100%;
+    min-width: 70px;
+  }
+  .search-container {
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 100%;
+    width: auto;
+  }
+  .search-input {
+    font-size: 10px;
+    padding: 2px 8px 2px 4px;
+    border-radius: 7px;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .search-icon {
+    font-size: 12px !important;
+  }
+}
+
+
+
+.mobile-menu .menu-btn,
+.mobile-menu .menu-btn:hover,
+.mobile-dropdown-content .menu-btn,
+.mobile-dropdown-content .menu-btn:hover {
+  border-radius: 0 !important;
+}
+@media (max-width: 480px) {
+  .dropdown-content .menu-btn {
+    border-radius: 0 !important;
+  }
+}
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: auto;
+  z-index: 1200;
+}
+.header-icon-link {
+  color: #222;
+  margin-left: 8px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+.header-icon-link:hover {
+  color: #fff !important;
+}
+@media (max-width: 900px) {
+  .header-icons {
+    margin-left: auto;
+    margin-right: 8px;
+    gap: 14px;
+  }
+}
